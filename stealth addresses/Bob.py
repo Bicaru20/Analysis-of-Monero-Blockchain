@@ -28,10 +28,15 @@ class Bob():
         return self.Bpub
         
     def check_transaction(self, R, P):
-        x = (self.__Apriv*R) + self.__Bpriv
-        if P == self.generator*x:
+        x = self._permut(self.__Apriv*R)*self.generator + self.__Bpriv
+        if P == x:
             return True
         return False
+    
+    def _permut(self, m):
+        m = str(m)
+        msg = m.encode("utf-8")
+        return int(hashlib.sha1(msg).hexdigest(), 16)
 
 # print(f"Private key : {crypto.dump_privatekey(crypto.FILETYPE_PEM, BobA)}\n")
 # print(f"Public key : {crypto.dump_publickey(crypto.FILETYPE_PEM, BobA)}\n")
@@ -39,3 +44,4 @@ class Bob():
 # print(f"Private key : {crypto.dump_privatekey(crypto.FILETYPE_PEM, BobB)}\n")
 # print(f"Public key : {crypto.dump_publickey(crypto.FILETYPE_PEM, BobB)}\n")
 
+# self.p = int(hashlib.sha1(msg).hexdigest(), 16)

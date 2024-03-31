@@ -8,5 +8,11 @@ class Alice():
         self.generator = generator
 
     def new_public_key(self, A, B):
-        P = A*self.__r*self.generator + B
+        P = (self._permut(A*self.__r))*self.generator + B
         return P, self.R
+    
+    def _permut(self, m):
+        m = str(m)
+        msg = m.encode("utf-8")
+        return int(hashlib.sha1(msg).hexdigest(), 16)
+    
