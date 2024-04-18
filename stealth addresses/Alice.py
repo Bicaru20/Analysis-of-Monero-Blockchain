@@ -2,7 +2,7 @@ import hashlib
 import random
 
 from helper import double_and_add
-from confi import infinite
+from confi import infinite, q
 class Alice():
     def __init__(self, generator) -> None:
         self.__r = random.randint(0, 2**256)
@@ -24,4 +24,4 @@ class Alice():
         
         hash_value = int.from_bytes(hash_bytes, byteorder='big')
         
-        return hash_value
+        return hash_value % q

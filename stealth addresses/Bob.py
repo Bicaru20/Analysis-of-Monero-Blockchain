@@ -2,7 +2,7 @@ import hashlib
 import random
 
 from helper import double_and_add
-from confi import infinite
+from confi import infinite, q
 
 
 class Bob():
@@ -51,7 +51,7 @@ class Bob():
         
         hash_value = int.from_bytes(hash_bytes, byteorder='big')
         
-        return hash_value
+        return hash_value % q
     
 
 

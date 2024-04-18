@@ -1,9 +1,7 @@
 from Bob import Bob
 from Alice import Alice
-from ecdsa.ellipticcurve import CurveEdTw, PointEdwards, Point
 from confi import G, l
 
-import hashlib
 
 
 user_Bob = Bob(G, l)
