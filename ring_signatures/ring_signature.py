@@ -57,8 +57,8 @@ class Ring:
         L = []
         R = []
         for i in range(n):
-            L.append(self.__key_to_str(double_and_add(self.generator, omega[i+n], infinite)+double_and_add(self.S[i], omega[i+1], infinite)))
-            R.append(self.__key_to_str(double_and_add(self.S[i], omega[i+n], infinite)+double_and_add(omega[0], omega[i+1], infinite)))
+            L.append(self.__key_to_str(double_and_add(self.generator, omega[i+n+1], infinite)+double_and_add(self.S[i], omega[i+1], infinite)))
+            R.append(self.__key_to_str(double_and_add(self.S[i], omega[i+n+1], infinite)+double_and_add(omega[0], omega[i+1], infinite)))
         ring = self.__Hs([message] + L + R)
         c_f =  ring % self.l
         return c_f == sum(self.c) % self.l
