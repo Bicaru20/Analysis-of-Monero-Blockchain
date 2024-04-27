@@ -45,14 +45,13 @@ class Ring:
             if i != self.s:
                 self.c.append(self.w[i])
                 self.r.append(self.q[i])
-            else:
-                self.c.append((c_hashed - sum(self.w)) % self.l) # Quan fem el mod?
-                self.r.append((self.q[self.s]-self.c[self.s]*self.__priv)%self.l)
+
+        self.c.insert(self.s, (c_hashed - sum(self.w)) % self.l) # Quan fem el mod?
+        self.r.insert(self.s,(self.q[self.s]-self.c[self.s]*self.__priv)%self.l)
 
         omega = [self.key_image] + self.c + self.r
         return omega
                 
-
     def verification(self, omega, n, message):
         L = []
         R = []
