@@ -1,0 +1,31 @@
+2024-05-15 08:29:00.379	    7f568ea609c0	INFO	logging	contrib/epee/src/mlog.cpp:273	New log categories: *:WARNING,net:FATAL,net.http:FATAL,net.ssl:FATAL,net.p2p:FATAL,net.cn:FATAL,daemon.rpc:FATAL,global:INFO,verify:FATAL,serialization:FATAL,daemon.rpc.payment:ERROR,stacktrace:INFO,logging:INFO,msgwriter:INFO
+2024-05-15 08:29:00.379	    7f568ea609c0	INFO	logging	contrib/epee/src/mlog.cpp:273	New log categories: *:WARNING,net:FATAL,net.http:FATAL,net.ssl:FATAL,net.p2p:FATAL,net.cn:FATAL,daemon.rpc:FATAL,global:INFO,verify:FATAL,serialization:FATAL,daemon.rpc.payment:ERROR,stacktrace:INFO,logging:INFO,msgwriter:INFO
+2024-05-15 08:29:00.379	    7f568ea609c0	INFO	global	src/daemon/main.cpp:294	Monero 'Oxygen Orion' (v0.17.2.0-unknown)
+2024-05-15 08:29:00.380	    7f568ea609c0	INFO	global	src/daemon/protocol.h:53	Initializing cryptonote protocol...
+2024-05-15 08:29:00.380	    7f568ea609c0	INFO	global	src/daemon/protocol.h:58	Cryptonote protocol initialized OK
+2024-05-15 08:29:00.384	    7f568ea609c0	INFO	global	src/daemon/core.h:63	Initializing core...
+2024-05-15 08:29:00.386	    7f568ea609c0	INFO	global	src/cryptonote_core/cryptonote_core.cpp:515	Loading blockchain from folder ./testnet/node_01/testnet/lmdb ...
+2024-05-15 08:29:00.387	    7f568ea609c0	WARNING	global	src/blockchain_db/lmdb/db_lmdb.cpp:1353	The blockchain is on a rotating drive: this will be very slow, use an SSD if possible
+2024-05-15 08:29:00.657	    7f568ea609c0	INFO	global	src/cryptonote_core/cryptonote_core.cpp:690	Loading checkpoints
+2024-05-15 08:29:00.657	    7f568ea609c0	INFO	global	src/daemon/core.h:73	Core initialized OK
+2024-05-15 08:29:00.657	    7f568ea609c0	INFO	global	src/daemon/p2p.h:63	Initializing p2p server...
+2024-05-15 08:29:00.671	    7f568ea609c0	INFO	global	src/daemon/p2p.h:68	p2p server initialized OK
+2024-05-15 08:29:00.672	    7f568ea609c0	INFO	global	src/daemon/rpc.h:63	Initializing core RPC server...
+2024-05-15 08:29:00.673	    7f568ea609c0	INFO	global	contrib/epee/include/net/http_server_impl_base.h:79	Binding on 127.0.0.1 (IPv4):28081
+2024-05-15 08:29:05.171	    7f568ea609c0	INFO	global	src/daemon/rpc.h:69	core RPC server initialized OK on port: 28081
+2024-05-15 08:29:05.180	    7f568ea609c0	INFO	global	src/daemon/rpc.h:74	Starting core RPC server...
+2024-05-15 08:29:05.182	[SRV_MAIN]	INFO	global	src/daemon/rpc.h:79	core RPC server started ok
+2024-05-15 08:29:05.183	[SRV_MAIN]	INFO	global	src/daemon/p2p.h:78	Starting p2p net loop...
+2024-05-15 08:29:06.185	[P2P1]	INFO	global	src/cryptonote_core/cryptonote_core.cpp:1726	
+2024-05-15 08:29:06.185	[P2P1]	INFO	global	src/cryptonote_core/cryptonote_core.cpp:1726	**********************************************************************
+2024-05-15 08:29:06.185	[P2P1]	INFO	global	src/cryptonote_core/cryptonote_core.cpp:1726	The daemon will start synchronizing with the network. This may take a long time to complete.
+2024-05-15 08:29:06.185	[P2P1]	INFO	global	src/cryptonote_core/cryptonote_core.cpp:1726	
+2024-05-15 08:29:06.185	[P2P1]	INFO	global	src/cryptonote_core/cryptonote_core.cpp:1726	You can set the level of process detailization through "set_log <level|categories>" command,
+2024-05-15 08:29:06.185	[P2P1]	INFO	global	src/cryptonote_core/cryptonote_core.cpp:1726	where <level> is between 0 (no details) and 4 (very verbose), or custom category based levels (eg, *:WARNING).
+2024-05-15 08:29:06.185	[P2P1]	INFO	global	src/cryptonote_core/cryptonote_core.cpp:1726	
+2024-05-15 08:29:06.185	[P2P1]	INFO	global	src/cryptonote_core/cryptonote_core.cpp:1726	Use the "help" command to see the list of available commands.
+2024-05-15 08:29:06.185	[P2P1]	INFO	global	src/cryptonote_core/cryptonote_core.cpp:1726	Use "help <command>" to see a command's documentation.
+2024-05-15 08:29:06.186	[P2P1]	INFO	global	src/cryptonote_core/cryptonote_core.cpp:1726	**********************************************************************
+2024-05-15 08:29:48.478	    7f56467fc640	ERROR	msgwriter	src/common/scoped_message_writer.h:102	Error: Mining did not start -- BUSY
+2024-05-15 08:30:21.439	[P2P1]	WARNING	net.dns	src/common/dns_utils.cpp:567	WARNING: no two valid DNS TXT records were received
+2024-05-15 08:38:35.808	    7f56467fc640	ERROR	msgwriter	src/common/scoped_message_writer.h:102	Error: Mining did not start -- BUSY
