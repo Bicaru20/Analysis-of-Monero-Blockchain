@@ -29,3 +29,25 @@
 2024-05-15 08:29:48.478	    7f56467fc640	ERROR	msgwriter	src/common/scoped_message_writer.h:102	Error: Mining did not start -- BUSY
 2024-05-15 08:30:21.439	[P2P1]	WARNING	net.dns	src/common/dns_utils.cpp:567	WARNING: no two valid DNS TXT records were received
 2024-05-15 08:38:35.808	    7f56467fc640	ERROR	msgwriter	src/common/scoped_message_writer.h:102	Error: Mining did not start -- BUSY
+2024-05-15 08:54:30.536	    7f56467fc640	INFO	msgwriter	src/common/scoped_message_writer.h:102	0 alternate chains found:
+2024-05-15 08:54:44.032	    7f56467fc640	ERROR	msgwriter	src/common/scoped_message_writer.h:102	Error: Problem fetching info -- unknown command: 'check_blockchain_pruning'
+2024-05-15 08:56:02.888	    7f56467fc640	WARNING	net.dns	src/common/dns_utils.cpp:567	WARNING: no two valid DNS TXT records were received
+2024-05-15 08:56:02.888	    7f56467fc640	ERROR	msgwriter	src/common/scoped_message_writer.h:102	Error: Problem fetching info -- Error checking for updates
+2024-05-15 08:56:43.775	    7f56467fc640	INFO	msgwriter	src/common/scoped_message_writer.h:102	Stop signal sent
+2024-05-15 08:56:43.776	[SRV_MAIN]	INFO	global	src/daemon/p2p.h:80	p2p net loop stopped
+2024-05-15 08:56:43.877	    7f5645ffb640	INFO	stacktrace	src/common/stack_trace.cpp:133	Exception: std::system_error
+2024-05-15 08:56:43.877	    7f5645ffb640	INFO	stacktrace	src/common/stack_trace.cpp:134	Unwound call stack:
+2024-05-15 08:56:43.878	    7f5645ffb640	INFO	stacktrace	src/common/stack_trace.cpp:172	    [1]  0x11f) [0x55b1096cb593]:__cxa_throw+0x11f) [0x55b1096cb593]
+2024-05-15 08:56:43.878	    7f5645ffb640	INFO	stacktrace	src/common/stack_trace.cpp:172	    [2]  0xed) [0x55b1096c8ab9]:_ZN6detail6expect6throw_ESt10error_codePKcS3_j+0xed) [0x55b1096c8ab9]
+2024-05-15 08:56:43.878	    7f5645ffb640	INFO	stacktrace	src/common/stack_trace.cpp:172	    [3]  0x8fd) [0x55b109c46c8d]:_ZN10cryptonote3rpc9ZmqServer5serveEv+0x8fd) [0x55b109c46c8d]
+2024-05-15 08:56:43.878	    7f5645ffb640	INFO	stacktrace	src/common/stack_trace.cpp:172	    [4]  0x150cb) [0x7f569166c0cb]:_64-linux-gnu/libboost_thread.so.1.74.0(+0x150cb) [0x7f569166c0cb]
+2024-05-15 08:56:43.878	    7f5645ffb640	INFO	stacktrace	src/common/stack_trace.cpp:172	    [5]  0x94b43) [0x7f569114cb43]:_64-linux-gnu/libc.so.6(+0x94b43) [0x7f569114cb43]
+2024-05-15 08:56:43.878	    7f5645ffb640	INFO	stacktrace	src/common/stack_trace.cpp:172	    [6]  0x126a00) [0x7f56911dea00]:_64-linux-gnu/libc.so.6(+0x126a00) [0x7f56911dea00]
+2024-05-15 08:56:43.878	    7f5645ffb640	INFO	stacktrace	src/common/stack_trace.cpp:172	
+2024-05-15 08:56:43.880	[SRV_MAIN]	INFO	global	src/daemon/rpc.h:84	Stopping core RPC server...
+2024-05-15 08:56:43.880	[SRV_MAIN]	INFO	global	src/daemon/daemon.cpp:227	Node stopped.
+2024-05-15 08:56:43.906	[SRV_MAIN]	INFO	global	src/daemon/rpc.h:96	Deinitializing core RPC server...
+2024-05-15 08:56:43.907	[SRV_MAIN]	INFO	global	src/daemon/p2p.h:90	Deinitializing p2p...
+2024-05-15 08:56:44.366	[SRV_MAIN]	INFO	global	src/daemon/core.h:94	Deinitializing core...
+2024-05-15 08:56:44.368	[SRV_MAIN]	INFO	global	src/daemon/protocol.h:75	Stopping cryptonote protocol...
+2024-05-15 08:56:44.368	[SRV_MAIN]	INFO	global	src/daemon/protocol.h:79	Cryptonote protocol stopped successfully

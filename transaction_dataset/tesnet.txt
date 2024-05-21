@@ -8,8 +8,6 @@ Create the first wallet:
 monero-wallet-cli --testnet --generate-new-wallet ./testnet/wallet_01.bin  --restore-deterministic-wallet --electrum-seed="joking today inroads hamburger together tagged deftly lofty sake hive bevel adhesive eternal ointment fixate boyfriend river foyer nocturnal noted petals evaluate omnibus paradise fixate" --password "" --log-file ./testnet/wallet_01.log;
 Generated new wallet: 9w3qyTa47tLcv4H5hw7vTZNCDVsAdSbnhEJ5jaWE7JoVGUy5aQzGFiwcMr4dC3reGBM4WvLpmMYx8PGQGsEEsdXqK3ev51e
 View key: 11832087d1a9227ca7d37e5b2baeb16474df8a68b6baf7e6f450e020e6fc1001
-
-Second wallet:
 monero-wallet-cli --testnet --generate-new-wallet ./testnet/wallet_02.bin  --restore-deterministic-wallet --electrum-seed="nightly ahead rugged sizes dubbed moisture taxi village lilac copy ouch scenic selfish sewage aisle mullet ember atrium coal orbit memoir tusks scuba subtly sewage" --password "" --log-file ./testnet/wallet_02.log;
 Generated new wallet: 9tyCsoCqSdq54w16wYsX6Z8Ppj2biRyaHXU9Adam1DpQ9rEksgMoMLL82qLZzwaMzjCYw9aoBtr2BegLRBAw4uu8TUHKjuE
 View key: bbd2a209f45b33c42e1700c8f63af1d7d549d2b74dbcee9c93765a2f92c46d03
@@ -20,8 +18,20 @@ Generated new wallet: 9ypZGA9b51mhzbtbUo3yUdYsYm5hzfY5mZNuBmSmadH25rx1jkEd9UGCms
 View key: 9e84b01da1dbf6c11c71475bcc528cff1d94282979baed6cefb540d3eb394106
 
 Node 1:
-monerod --testnet  --no-igd --hide-my-port --data-dir ./testnet/node_01 --p2p-bind-ip 127.0.0.1 --log-level 0 --add-exclusive-node 127.0.0.1:38080 --add-exclusive-node 127.0.0.1:48080  --fixed-difficulty 100 --disable-rpc-ban
+monerod --testnet  --no-igd --hide-my-port --data-dir ./te stnet/node_01 --p2p-bind-ip 127.0.0.1 --log-level 0 --add-exclusive-node 127.0.0.1:38080 --add-exclusive-node 127.0.0.1:48080  --fixed-difficulty 100 --disable-rpc-ban
+monerod --regtest --offline --fixed-difficulty 1
+monero-wallet-cli --regtest --offline --generate-new-wallet ./testnet/wallet_02.bin  --restore-deterministic-wallet --electrum-seed="nightly ahead rugged sizes dubbed moisture taxi village lilac copy ouch scenic selfish sewage aisle mullet ember atrium coal orbit memoir tusks scuba subtly sewage" --password "" --log-file ./testnet/wallet_02.log;
 start_mining  9w3qyTa47tLcv4H5hw7vTZNCDVsAdSbnhEJ5jaWE7JoVGUy5aQzGFiwcMr4dC3reGBM4WvLpmMYx8PGQGsEEsdXqK3ev51e 1
 
 Start wallates:
 monero-wallet-cli --testnet --trusted-daemon --wallet-file ./testnet/wallet_01.bin --password '' --log-file ./testnet/wallet_01.log
+
+`¡
+
+monero-wallet-cli
+wallet_01 --> eating rowboat glass ahead irritate upper zero ajar satin nineteen fitting examine raking sabotage germs fossil cousin soccer alerts rural adopt total loincloth nautical zero
+439nW7Z5UBSVvYUByKfntbHet2rNz6Qo4HnXvSPTke7gV51iVEUxEbr6RKX49HHaso6PRLSvceRZqCxTF9NVNAtrLLAFzB6
+wallet_02 --> oaks having spud huts negative voyage viking melting cylinder masterful bounced hire ensign ouch gadget ionic adventure token veteran unopened lucky tail bubble cowl melting
+43m37Fqo8zy6LuBYDfJVfe95uqsekac3GHmapSFkzL6VerqSTK3MVUVMfCYjVhY4R18SxQFjP3MnjdvggMt1UyR33SaTdA8
+
+Second wallet:
