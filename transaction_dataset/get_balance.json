@@ -1,0 +1,8 @@
+{"jsonrpc":"2.0","id":"0","method":"get_balance",
+"params":{"account_index":0,"address_indices":[0,1]}}
+
+{"jsonrpc":"2.0","id":"0","method":"transfer","params":{"destinations":
+[{"amount":100000000000,
+"address":"7BnERTpvL5MbCLtj5n9No7J5oE5
+hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o"}
+]}}
