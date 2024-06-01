@@ -9,7 +9,7 @@ class Ring:
         self.__priv = random.randint(1, l-1)
         self.pub = double_and_add(generator, self.__priv, infinite)
         self.generator = generator
-        self.key_image = double_and_add(self.pub, self.__priv, infinite)
+        self.key_image = double_and_add(self.__Hp(self.pub), self.__priv, infinite)
         self.l = l
         self.q_prime = q
 
@@ -26,11 +26,11 @@ class Ring:
         self.L = []
         self.R = []
         for i in range(n):
-            if i != self.s:
-                self.L.append(self.__key_to_str(double_and_add(self.generator, self.q[i], infinite)+double_and_add(self.S[i], self.w[i], infinite)))
-                self.R.append(self.__key_to_str(double_and_add(self.S[i], self.q[i], infinite)+double_and_add(self.key_image, self.w[i], infinite)))
-        self.L.insert(self.s, (self.__key_to_str(double_and_add(self.generator, self.q[i], infinite)))) 
-        self.R.insert(self.s, (self.__key_to_str(double_and_add(self.S[i], self.q[i], infinite)))) 
+            # Com que self.w[self.s] = 0, no cal tractar el cas per separat:
+            self.L.append(self.__key_to_str(double_and_add(self.generator, self.q[i], infinite)+double_and_add(self.S[i], self.w[i], infinite)))
+            self.R.append(self.__key_to_str(double_and_add(self.__Hp(self.S[i]), self.q[i], infinite)+double_and_add(self.key_image, self.w[i], infinite)))
+        #self.L.insert(self.s, (self.__key_to_str(double_and_add(self.generator, self.q[i], infinite))))
+        #self.R.insert(self.s, (self.__key_to_str(double_and_add(self.__Hp(self.S[i]), self.q[i], infinite))))
 
         c = [message] + self.L + self.R
 
@@ -54,7 +54,7 @@ class Ring:
         R = []
         for i in range(n):
             L.append(self.__key_to_str(double_and_add(self.generator, omega[i+n+1], infinite)+double_and_add(self.S[i], omega[i+1], infinite)))
-            R.append(self.__key_to_str(double_and_add(self.S[i], omega[i+n+1], infinite)+double_and_add(omega[0], omega[i+1], infinite)))
+            R.append(self.__key_to_str(double_and_add(self.__Hp(self.S[i]), omega[i+n+1], infinite)+double_and_add(omega[0], omega[i+1], infinite)))
         ring = self.__Hs([message] + L + R)
         c_f =  ring
         print(c_f)
@@ -77,7 +77,10 @@ class Ring:
         hash_value = int.from_bytes(hash_bytes, byteorder='big')
     
         return hash_value % self.l
-    
+
+    def __Hp(self, point):
+        return point
+
     def __key_to_str(self, key):
         return hex(key.x())[2:] + hex(key.y())[2:]
 
