@@ -22,3 +22,5 @@ RPC Monero Wallet RPC Servers:
 
 monero-wallet-rpc --testnet --wallet-file ~/testnet/wallet_01.bin --rpc-bind-port 28083 --disable-rpc-login --log-file ~/testnet/wallet_01.log --prompt-for-password 
 monero-wallet-rpc --testnet --wallet-file ~/testnet/wallet_02.bin --rpc-bind-port 38083 --disable-rpc-login --log-file ~/testnet/wallet_02.log --prompt-for-password
+
+#Importan blocks 1666-1699, 2093-2100
