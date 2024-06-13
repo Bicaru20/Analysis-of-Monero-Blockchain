@@ -10,6 +10,7 @@ rpc_url = "http://localhost:28081/json_rpc"
 
 # Function to make JSON-RPC requests to monerod
 def make_rpc_request(method, params=None):
+    
     headers = {"Content-Type": "application/json"}
     payload = {
         "jsonrpc": "2.0",
@@ -40,7 +41,7 @@ def get_block_by_height(height):
         return None
 
 def get_transactions(txid):
-    url = "http://127.0.0.1:38081/get_transactions"
+    url = "http://127.0.0.1:28081/get_transactions"
     # Define the JSON payload
     payload = {
         "txs_hashes": [
@@ -61,7 +62,7 @@ def get_transactions(txid):
 def get_transaction(txid):
     response = get_transactions(txid)
     if "txs_as_json" in response:
-        return response['txs_as_json']
+        return response['txs']
     else:
         print(f"Error: {response['error']['message']}")
         return None
@@ -78,7 +79,7 @@ if __name__ == "__main__":
         new_n = False
         new_n_out = False
         block_c = 0
-        for real in range(3269, 3271):
+        for real in range(3529, 3530): # 3269 3271
             print("-----------------")
             print("BLOCK: ", real)
             latest_block = get_block_by_height(real)
@@ -97,7 +98,7 @@ if __name__ == "__main__":
                     transaction = get_transaction(txid)
                     if transaction is None: continue
                     for trans in transaction:
-                        t = json.loads(trans)
+                        t = json.loads(trans['as_json'])
                         vin = t['vin']
                         vout = t['vout']
                         # print(f"Transaction {txid}: {vin}\n")
