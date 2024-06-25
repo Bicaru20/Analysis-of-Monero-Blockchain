@@ -1,6 +1,7 @@
 import requests
 import json
 import random
+import time 
 
 from config import sender_wallet_rpc_url, receiver_address
 
@@ -30,7 +31,7 @@ def transfer_xmr(sender_url, receiver, amount):
         "account_index": 0,
         "subaddr_indices": [],
         "priority": 1,
-        "ring_size": 4,
+        "ring_size": 2,
         "get_tx_key": True,
         "do_not_relay": False,
         "get_tx_hex": True
@@ -46,16 +47,16 @@ def transfer_xmr(sender_url, receiver, amount):
 
 
 # Transfer amount (in atomic units, 1 XMR = 1e12 atomic units)
-for x in range(1):
-    # transfer_amount = random.randint(5000000000000, 10000000000000)  # 1 XMR
-    transfer_amount = 5000000000000
-    index = random.randint(0,2)
-    sender_wallet = sender_wallet_rpc_url[1]
+for x in range(50):
+    transfer_amount = random.randint(5000000000000, 20000000000000)  # 1 XMR
+    index = random.randint(0,1)
+    sender_wallet = sender_wallet_rpc_url[0]
     i = index
     while i == index:
         i = random.randint(0,2)
-    receiver = receiver_address[2]
+    receiver = receiver_address[1]
     transfer_xmr(sender_wallet, receiver, transfer_amount)
     print('Transaction done. Number: ', x)
     print('Transaction quantity: ', transfer_amount/(10**12))
+    print('Send to wallet: ', i)
     print('----------------')
