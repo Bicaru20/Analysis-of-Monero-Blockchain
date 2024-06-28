@@ -31,7 +31,7 @@ def transfer_xmr(sender_url, receiver, amount):
         "account_index": 0,
         "subaddr_indices": [],
         "priority": 1,
-        "ring_size": 2,
+        "ring_size": 10,
         "get_tx_key": True,
         "do_not_relay": False,
         "get_tx_hex": True
@@ -47,7 +47,8 @@ def transfer_xmr(sender_url, receiver, amount):
 
 
 # Transfer amount (in atomic units, 1 XMR = 1e12 atomic units)
-for x in range(50):
+for x in range(500):
+    time.sleep(2)
     transfer_amount = random.randint(5000000000000, 20000000000000)  # 1 XMR
     index = random.randint(0,1)
     sender_wallet = sender_wallet_rpc_url[0]

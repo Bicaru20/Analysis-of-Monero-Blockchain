@@ -30,19 +30,6 @@ CREATE (b1)-[pb:PREV_BLOCK]->(b2);
     ```
     
     ```cypher
-LOAD CSV FROM 'file:///csv_headers/blocks.csv' AS row
-WITH collect(row)[0] AS columns
-LOAD CSV FROM 'file:///csv/blocks.csv' AS row
-WITH row, columns
-CREATE (b:Block {
-  id: row[toInteger(apoc.coll.indexOf(columns, ':ID'))],
-  height: toInteger(row[toInteger(apoc.coll.indexOf(columns, ':height'))]),
-  hash: row[toInteger(apoc.coll.indexOf(columns, ':hash'))],
-  timestamp: row[toInteger(apoc.coll.indexOf(columns, ':timestamp'))]
-});
-    ```
-    
-    ```cypher
     LOAD CSV FROM 'file:///csv_headers/transactions.csv' AS row
 WITH collect(row)[0] AS columns
 LOAD CSV FROM 'file:///csv/transactions.csv' AS row
@@ -65,7 +52,8 @@ MATCH (b:Block {id: row[toInteger(apoc.coll.indexOf(columns, ':END_ID'))]})
 CREATE (t)-[ib:IN_BLOCK]->(b);
     ```
     
-    ```cypherLOAD CSV FROM 'file:///csv_headers/outputs.csv' AS row
+    ```cypher
+    LOAD CSV FROM 'file:///csv_headers/outputs.csv' AS row
 WITH collect(row)[0] AS columns
 LOAD CSV FROM 'file:///csv/outputs.csv' AS row
 WITH row, columns
@@ -112,7 +100,8 @@ MATCH (i:Input {id: row[toInteger(apoc.coll.indexOf(columns, ':END_ID'))]})
 CREATE (i)-[txi:TX_INPUT]->(t)
     ```
     
-    ```cypherLOAD CSV FROM 'file:///csv_headers/input-output-refs.csv' AS row
+    ```cypher
+    LOAD CSV FROM 'file:///csv_headers/input-output-refs.csv' AS row
 WITH collect(row)[0] AS columns
 // Load data using the column names
 LOAD CSV FROM 'file:///csv/input-output-refs.csv' AS row
