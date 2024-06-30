@@ -1,5 +1,4 @@
 Source code: https://github.com/moneroexamples/private-testnet
-Generate new save words: https://xmr.llcoins.net/
 
 
 sudo apt update
